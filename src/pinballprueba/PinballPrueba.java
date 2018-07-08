@@ -148,9 +148,9 @@ public class PinballPrueba extends JPanel {
 		int rX = (int) p2d[0];
 		int rY = (int) p2d[1];
 		int r = 10;
-		g.setColor(Color.blue);//color bolita
+		g.setColor(Color.white);//color bolita
 		g.drawArc(rX - r, rY - r, 2 * r, 2 * r, 0, 360);
-		g.setColor(Color.black);//color lineas del marco
+		g.setColor(Color.LIGHT_GRAY);//color lineas del marco
 		for(int i = 0; i < lines.length; i++){
 			int x1 = lines[i][0],
 				y1 = lines[i][1],
@@ -194,13 +194,13 @@ public class PinballPrueba extends JPanel {
 				}
 			}
 		}
-		g.setColor(Color.black);
+		g.setColor(Color.CYAN); // color cuadrito
 		
 		g.fillRect(xpos - 5, (int)sd + 10, 10, 20);
 		stars=points/500;
-		g.drawString("PUNTAJE: " + points , 650, 225);
-		g.drawString("VIDAS: " +  lives, 650, 275);
-                g.drawString("ESTRELLAS: " +  stars, 650, 325);
+		g.drawString("PUNTAJE: " + points , 650, 250);
+		g.drawString("VIDAS: " +  lives, 650, 300);
+                g.drawString("ESTRELLAS: " +  stars, 650, 350);
                 
 	}
 	

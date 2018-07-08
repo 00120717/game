@@ -23,7 +23,9 @@ public class Imagen extends javax.swing.JPanel{
     public void paint(Graphics grafico) {
 
     //Se selecciona la imagen que tenemos en el paquete de la //ruta del programa
-
+    ImageIcon fond = new ImageIcon(getClass().getResource("madera.png")); 
+    ImageIcon fondo = new ImageIcon(getClass().getResource("Galaxia.png")); 
+    ImageIcon ski = new ImageIcon(getClass().getResource("eskina2.png")); 
     ImageIcon Img = new ImageIcon(getClass().getResource("sol.png")); 
     ImageIcon Img2 = new ImageIcon(getClass().getResource("planet2.png")); 
     ImageIcon Img3 = new ImageIcon(getClass().getResource("planet3.png"));
@@ -36,7 +38,9 @@ public class Imagen extends javax.swing.JPanel{
     ImageIcon Img10 = new ImageIcon(getClass().getResource("logo.png"));
     
     //se dibuja la imagen que tenemos en el paquete Images //dentro de un panel
-
+    grafico.drawImage(fondo.getImage(), 0, 0, 615, 650, null);
+    grafico.drawImage(fond.getImage(), 615, 0, 700, 650, null);
+    grafico.drawImage(ski.getImage(), 550, 0, 60, 60, null);
     grafico.drawImage(Img.getImage(), 30, 30, 105, 105, null);
     grafico.drawImage(Img2.getImage(), 15, 365, 70, 70, null);
     grafico.drawImage(Img3.getImage(), 200, 250, 60, 60, null);
@@ -46,7 +50,7 @@ public class Imagen extends javax.swing.JPanel{
     grafico.drawImage(Img7.getImage(), 0, 550, 190, 70, null);
     grafico.drawImage(Img8.getImage(), 370, 550, 230, 70, null);
     grafico.drawImage(Img9.getImage(), 600, 0, 20, 800, null);
-    grafico.drawImage(Img10.getImage(), 550, 0, 300, 200, null);
+    grafico.drawImage(Img10.getImage(), 550, 0, 300, 230, null);
     
     setOpaque(false);
     super.paintComponent(grafico);
