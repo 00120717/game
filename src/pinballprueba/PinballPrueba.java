@@ -10,9 +10,20 @@ package pinballprueba;
  * @author Marvin Ramirez
  */
 import Imagenes.Imagen;
+import java.applet.Applet;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.applet.AudioClip;
+import java.io.File;
+import java.io.IOException;
+import javax.sound.sampled.AudioFileFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class PinballPrueba extends JPanel {
 	Timer t = new Timer(1, new Listener());
@@ -25,7 +36,7 @@ public class PinballPrueba extends JPanel {
 	double[] v2d = {0, 0};
 	
 	int points = 0;
-	int lives = 0;
+	int lives = 4;
 	int sides = 13;
 	int stars = 0;
 	double snorm = 400;
@@ -62,7 +73,7 @@ public class PinballPrueba extends JPanel {
                         {50, 400, 35, 50},
                         {500, 400, 35, 50}
 	};
-	int lines[][] = new int[100][5];
+	int lines[][] = new int[150][5];
 	
 	public PinballPrueba(){
 		super();
@@ -92,7 +103,7 @@ public class PinballPrueba extends JPanel {
 	}
 	
 	private class Listener implements ActionListener {
-		
+	    
             public void actionPerformed(ActionEvent e){
 			repaint();
 		}
@@ -117,7 +128,7 @@ public class PinballPrueba extends JPanel {
 			p2d[1] = 200;
 			v2d[0] = 0;
 			v2d[1] = 0;
-			lives++;
+			lives--;
 		}
 		if(p2d[0] == 570 && p2d[1] > sd){
 			p2d[1] = sd;
@@ -179,7 +190,7 @@ public class PinballPrueba extends JPanel {
 			if(sx >= Math.min(x2, x1) && sx <= Math.max(x1, x2) && 
 			   Math.min(y1, y2) <= y && Math.max(y1, y2) >= y){
 				double interdist = Math.sqrt(Math.pow(sx - p2d[0],2) + Math.pow(y - p2d[1],2));
-				double tiny = 0.0001;
+				double tiny = 0.00000000001;
 				double futuredist = Math.sqrt(Math.pow(sx - (p2d[0] + Math.cos(ba) * tiny),2) + Math.pow(y - (p2d[1] + Math.sin(ba) * tiny),2));
 				
 				if(interdist <=  bmag + r && futuredist < interdist){ 
@@ -194,16 +205,22 @@ public class PinballPrueba extends JPanel {
 				}
 			}
 		}
-		g.setColor(Color.CYAN); // color cuadrito
+		g.setColor(Color.DARK_GRAY); // color cuadrito
 		
-		g.fillRect(xpos - 5, (int)sd + 10, 10, 20);
-		stars=points/500;
+		g.fillRect(xpos - 10, (int)sd + 10,20 , 70);
+		stars=points/1000;
 		g.drawString("PUNTAJE: " + points , 650, 250);
 		g.drawString("VIDAS: " +  lives, 650, 300);
                 g.drawString("ESTRELLAS: " +  stars, 650, 350);
                 
 	}
 	
+        public void sonido() throws IOException, UnsupportedAudioFileException{
+            AudioClip sonido=Applet.newAudioClip(getClass().getResource("sound.wav"));
+            sonido.loop();
+            
+        }
+        
         // controles 
 	private class Key extends KeyAdapter {
 		public void keyPressed(KeyEvent e){
@@ -228,6 +245,7 @@ public class PinballPrueba extends JPanel {
 			}
 		}
 	}
+        
 
     public int getPoints() {
         return points;
