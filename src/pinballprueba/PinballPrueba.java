@@ -27,7 +27,7 @@ public class PinballPrueba extends JPanel {
 	int points = 0;
 	int lives = 0;
 	int sides = 13;
-	
+	int stars = 0;
 	double snorm = 400;
 	double sd = 450;
 	double sv = 0;
@@ -126,7 +126,7 @@ public class PinballPrueba extends JPanel {
 		
 		if(setlock == false){
 			sv *= 0.95; //impulso
-			sv -= (sd - snorm)/30;
+			sv -= (sd - snorm)/50;
 			sd += sv;
 		}
 		double rc = 0.1;
@@ -197,10 +197,10 @@ public class PinballPrueba extends JPanel {
 		g.setColor(Color.black);
 		
 		g.fillRect(xpos - 5, (int)sd + 10, 10, 20);
-		
+		stars=points/500;
 		g.drawString("PUNTAJE: " + points , 650, 225);
-		g.drawString("REINICIOS: " +  lives, 650, 275);
-                
+		g.drawString("VIDAS: " +  lives, 650, 275);
+                g.drawString("ESTRELLAS: " +  stars, 650, 325);
                 
 	}
 	
@@ -228,10 +228,7 @@ public class PinballPrueba extends JPanel {
 			}
 		}
 	}
-
-    public int getLives() {
-        return lives;
-    }
-    
-    
+        
+        
+        
 }

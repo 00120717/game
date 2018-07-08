@@ -16,7 +16,7 @@ JFrame frame = new JFrame();
 
 
 frame.setSize(800,650);
-frame.setResizable(false);
+frame.setResizable(true);
 
 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -26,10 +26,7 @@ PinballPrueba panel = new PinballPrueba();
 
 frame.add(panel);
 
-   
-while(panel.getLives()<4){
-    frame.setVisible(true);
-}
-   // frame.setVisible(false);
+
+   frame.setVisible(true);
     }
 }
