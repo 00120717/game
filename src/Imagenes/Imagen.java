@@ -43,8 +43,8 @@ public class Imagen extends javax.swing.JPanel{
     grafico.drawImage(Img4.getImage(), 375,175 , 50, 50, null);
     grafico.drawImage(Img5.getImage(), 220,70 , 60, 60, null);
     grafico.drawImage(Img6.getImage(), 465,365 , 70, 70, null);
-    grafico.drawImage(Img7.getImage(), 0, 540, 190, 70, null);
-    grafico.drawImage(Img8.getImage(), 370, 540, 230, 70, null);
+    grafico.drawImage(Img7.getImage(), 0, 550, 190, 70, null);
+    grafico.drawImage(Img8.getImage(), 370, 550, 230, 70, null);
     grafico.drawImage(Img9.getImage(), 600, 0, 20, 800, null);
     grafico.drawImage(Img10.getImage(), 550, 0, 300, 200, null);
     

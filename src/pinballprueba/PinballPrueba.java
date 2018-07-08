@@ -50,8 +50,8 @@ public class PinballPrueba extends JPanel {
 			{600, 0, 600, 650, 1}, //pared derecha
 			{-1, 0, 600, 0, 1}, //pared de arriba
 			{0, -1, 0, 650, 1}, //pared izquierda
-                        {0, 550, 190, 610, 1},//esquina inferior izquierda
-                        {380, 610, 600, 550, 1}//esquina inferior derecha
+                        {0, 550, 190, 620, 1},//esquina inferior izquierda
+                        {380, 620, 600, 550, 1}//esquina inferior derecha
 	};
         // dibujar circulos
 	int[][] balls = {
