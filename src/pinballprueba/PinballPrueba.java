@@ -19,7 +19,7 @@ public class PinballPrueba extends JPanel {
 	int ctr = 0;
 	double G = 0.1; //Gravedad
 
-	final int xpos = 570; // posicion en x de 
+	final int xpos = 570; // posicion en x del lanzaador
 	
 	double[] p2d = {300, 200};
 	double[] v2d = {0, 0};
@@ -49,7 +49,9 @@ public class PinballPrueba extends JPanel {
 			{570, 0, 600, 20, 1}, //esquina derecha
 			{600, 0, 600, 650, 1}, //pared derecha
 			{-1, 0, 600, 0, 1}, //pared de arriba
-			{0, -1, 0, 650, 1} //pared izquierda
+			{0, -1, 0, 650, 1}, //pared izquierda
+                        {0, 550, 190, 610, 1},//esquina inferior izquierda
+                        {380, 610, 600, 550, 1}//esquina inferior derecha
 	};
         // dibujar circulos
 	int[][] balls = {
@@ -148,7 +150,7 @@ public class PinballPrueba extends JPanel {
 		int r = 10;
 		g.setColor(Color.blue);//color bolita
 		g.drawArc(rX - r, rY - r, 2 * r, 2 * r, 0, 360);
-		g.setColor(Color.MAGENTA);//color lineas del marco
+		g.setColor(Color.black);//color lineas del marco
 		for(int i = 0; i < lines.length; i++){
 			int x1 = lines[i][0],
 				y1 = lines[i][1],
@@ -196,8 +198,8 @@ public class PinballPrueba extends JPanel {
 		
 		g.fillRect(xpos - 5, (int)sd + 10, 10, 20);
 		
-		g.drawString("PUNTAJE: " + points , 610, 30);
-		g.drawString("REINICIOS: " +  lives, 610, 60);
+		g.drawString("PUNTAJE: " + points , 650, 225);
+		g.drawString("REINICIOS: " +  lives, 650, 275);
                 
                 
 	}

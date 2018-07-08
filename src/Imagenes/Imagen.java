@@ -30,6 +30,10 @@ public class Imagen extends javax.swing.JPanel{
     ImageIcon Img4 = new ImageIcon(getClass().getResource("Luna.png"));
     ImageIcon Img5 = new ImageIcon(getClass().getResource("planeta6.png"));
     ImageIcon Img6 = new ImageIcon(getClass().getResource("planet5.png"));
+    ImageIcon Img7 = new ImageIcon(getClass().getResource("inferior.png"));
+    ImageIcon Img8 = new ImageIcon(getClass().getResource("inferiorD.png"));
+    ImageIcon Img9 = new ImageIcon(getClass().getResource("barra.png"));
+    ImageIcon Img10 = new ImageIcon(getClass().getResource("logo.png"));
     
     //se dibuja la imagen que tenemos en el paquete Images //dentro de un panel
 
@@ -39,22 +43,13 @@ public class Imagen extends javax.swing.JPanel{
     grafico.drawImage(Img4.getImage(), 375,175 , 50, 50, null);
     grafico.drawImage(Img5.getImage(), 220,70 , 60, 60, null);
     grafico.drawImage(Img6.getImage(), 465,365 , 70, 70, null);
+    grafico.drawImage(Img7.getImage(), 0, 540, 190, 70, null);
+    grafico.drawImage(Img8.getImage(), 370, 540, 230, 70, null);
+    grafico.drawImage(Img9.getImage(), 600, 0, 20, 800, null);
+    grafico.drawImage(Img10.getImage(), 550, 0, 300, 200, null);
     
     setOpaque(false);
     super.paintComponent(grafico);
     }
-    
-  /*  public class GIFPanel extends JPanel{
-      private Image imagen;
-      public GIFPanel(Image imagen){
-          this.imagen = imagen;
-      }
 
-      @Override
-      public void paintComponent(Graphics g){
-          super.paintComponent(g);
-          g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
-      }     
-}*/
-    
 }
